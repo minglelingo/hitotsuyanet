@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const places = [
   {
     no: "01",
@@ -75,11 +73,15 @@ export default function Home() {
       <header className="site-header">
         <a className="brand" href="#top" aria-label="ひとつやねっと ホーム">
           <span className="brand-mark">ひ</span>
-          <span>ひとつやねっと</span>
+          <span className="brand-text">
+            <span>ひとつやねっと</span>
+            <small>調布・狛江居場所連絡会</small>
+          </span>
         </a>
         <nav aria-label="メインナビゲーション">
           <a href="#about">私たちについて</a>
           <a href="#places">居場所を探す</a>
+          <a href="#join">連絡会に参加する</a>
           <a className="nav-contact" href="#contact">お問い合わせ</a>
         </nav>
       </header>
@@ -107,17 +109,7 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-art" aria-hidden="true">
-          <div className="house">
-            <div className="roof" />
-            <div className="house-body">
-              <div className="door" />
-              <div className="window" />
-            </div>
-          </div>
-          <div className="garden garden-left">✿</div>
-          <div className="garden garden-right">⌇</div>
-          <div className="path" />
-          <p>ちょっと、よりみち。</p>
+          <img src="/hero.png" alt="" />
         </div>
         <a href="#about" className="scroll-cue" aria-label="次のセクションへ">SCROLL <span>↓</span></a>
       </section>
@@ -156,7 +148,7 @@ export default function Home() {
           {places.map((place) => (
             <article className="place-card" key={place.name}>
               <div className="place-image">
-                <Image src={place.image} alt={place.alt} fill sizes="(max-width: 760px) 100vw, 33vw" />
+                <img src={place.image} alt={place.alt} loading="lazy" decoding="async" />
                 <span>{place.area}</span>
               </div>
               <div className="place-content">
@@ -176,7 +168,7 @@ export default function Home() {
 
       <section className="yorimichi section">
         <div className="yorimichi-logo">
-          <Image src="/yorimichi-logo.jpg" alt="よりみち" width={382} height={164} />
+          <img src="/yorimichi-printed.png" alt="冊子「よりみち」の見開き" loading="lazy" decoding="async" />
         </div>
         <div>
           <p className="eyebrow">LOCAL COMMUNITY GUIDE</p>
@@ -186,6 +178,30 @@ export default function Home() {
             それぞれの想いがつくる6つの居場所を、冊子「よりみち」で紹介しています。
           </p>
           <a className="button outline" href="#places">掲載スポットを見る <span>→</span></a>
+        </div>
+      </section>
+
+      <section className="join section" id="join">
+        <div className="section-kicker"><span>JOIN THE NETWORK</span><i /></div>
+        <div className="join-grid">
+          <div>
+            <h2>連絡会に参加する</h2>
+            <p className="join-lead">
+              「ひとつやねっと」では、地域の居場所づくりに取り組む団体の参加を随時募集しています。
+              調布・狛江に限らず、府中市、三鷹市、稲城市、小金井市、武蔵野市など、近隣市で活動する団体も参加できます。
+            </p>
+          </div>
+          <div className="join-copy">
+            <p>
+              活動は、不定期の食事会を兼ねた意見交換会や、居場所の利用促進・担い手創出につながる広報企画など。
+              それぞれの現場の声を持ち寄りながら、地域にある居場所の可能性を一緒に広げています。
+            </p>
+            <p>
+              これまでに、猿田彦珈琲株式会社の協賛による「居場所スタンプラリー」の企画・実施や、
+              居場所ガイドブック『よりみち』の編集・配布に取り組んできました。
+            </p>
+            <a className="button primary" href="#contact">参加について相談する <span>→</span></a>
+          </div>
         </div>
       </section>
 
@@ -206,10 +222,15 @@ export default function Home() {
           <input type="hidden" name="_cc" value="ni.cl.ohki@gmail.com" />
           <input type="hidden" name="_subject" value="【ひとつやねっと】ホームページからのお問い合わせ" />
           <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value="https://hitotsuyanet.pages.dev/thanks.html" />
           <input className="honeypot" type="text" name="_honey" tabIndex={-1} autoComplete="off" />
           <div className="field-row">
             <label>お名前 <em>必須</em><input name="お名前" type="text" required autoComplete="name" placeholder="山田 花子" /></label>
-            <label>メールアドレス <em>必須</em><input name="メールアドレス" type="email" required autoComplete="email" placeholder="example@email.com" /></label>
+            <label>メールアドレス <em>必須</em><input name="email" type="email" required autoComplete="email" placeholder="example@email.com" /></label>
+          </div>
+          <div className="field-row">
+            <label>電話番号<input name="電話番号" type="tel" autoComplete="tel" placeholder="090-1234-5678" /></label>
+            <span aria-hidden="true" />
           </div>
           <label>お問い合わせの種類
             <select name="お問い合わせの種類" defaultValue="">
@@ -225,7 +246,6 @@ export default function Home() {
           </label>
           <label className="privacy"><input type="checkbox" required /> <span>入力した個人情報を、お問い合わせへの回答に利用することに同意します。</span></label>
           <button className="button primary submit" type="submit">この内容で送信する <span>→</span></button>
-          <p className="form-caption">送信先：ひとつやねっと運営担当者2名</p>
         </form>
       </section>
 
@@ -236,7 +256,7 @@ export default function Home() {
             <p>調布・狛江の周辺エリアで「地域の居場所」づくりに取り組む市民のネットワークです。</p>
           </div>
           <div className="footer-nav">
-            <a href="#about">私たちについて</a><a href="#places">居場所を探す</a><a href="#contact">お問い合わせ</a>
+            <a href="#about">私たちについて</a><a href="#places">居場所を探す</a><a href="#join">連絡会に参加する</a><a href="#contact">お問い合わせ</a>
           </div>
         </div>
         <div className="footer-bottom">

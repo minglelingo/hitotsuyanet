@@ -9,13 +9,13 @@ export const metadata: Metadata = {
     description: "家でも学校や職場でもない、誰もがホッと羽を休められる地域の居場所。",
     locale: "ja_JP",
     type: "website",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "ひとつやねっと - 調布・狛江の、まちの居場所。" }],
+    images: [{ url: "/og-v2.png", width: 1200, height: 630, alt: "ひとつやねっと - 調布・狛江の、まちの居場所。" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "ひとつやねっと｜調布・狛江の地域の居場所",
     description: "家でも学校や職場でもない、誰もがホッと羽を休められる地域の居場所。",
-    images: ["/og.png"],
+    images: ["/og-v2.png"],
   },
 };
 

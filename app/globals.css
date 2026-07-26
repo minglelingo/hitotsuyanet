@@ -11,7 +11,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: auto; }
 body { margin: 0; background: var(--cream); color: var(--ink); font-family: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif; }
 a { color: inherit; text-decoration: none; }
 button, input, select, textarea { font: inherit; }
@@ -19,12 +19,14 @@ button, input, select, textarea { font: inherit; }
 .site-header { position: absolute; z-index: 20; inset: 0 0 auto; height: 92px; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(24px, 5vw, 76px); border-bottom: 1px solid rgba(55,50,47,.12); }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-family: "Hiragino Kaku Gothic ProN", sans-serif; font-weight: 700; letter-spacing: .08em; }
 .brand-mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50% 50% 48% 38%; background: var(--coral); color: white; font-size: 18px; transform: rotate(-7deg); }
+.brand-text { display: flex; flex-direction: column; gap: 2px; line-height: 1.1; }
+.brand-text small { font-size: 10px; font-weight: 700; letter-spacing: .12em; color: rgba(55,50,47,.72); }
 nav { display: flex; align-items: center; gap: clamp(20px, 3vw, 48px); font-family: "Hiragino Kaku Gothic ProN", sans-serif; font-size: 13px; }
 nav a { transition: opacity .2s; }
 nav a:hover { opacity: .6; }
 .nav-contact { padding: 13px 22px; border: 1px solid var(--ink); border-radius: 999px; }
 
-.hero { position: relative; min-height: 780px; height: 100vh; max-height: 980px; overflow: hidden; background: #f7e4e1; display: grid; grid-template-columns: 52% 48%; align-items: center; padding: 110px clamp(24px, 7vw, 120px) 40px; }
+.hero { position: relative; min-height: 780px; height: 100vh; max-height: 980px; overflow: hidden; background: #f7e4e1; display: grid; grid-template-columns: 47% 53%; align-items: center; padding: 110px clamp(24px, 6vw, 104px) 40px; }
 .hero::after { content: ""; position: absolute; inset: 0; opacity: .25; pointer-events: none; background-image: radial-gradient(#9b745f 0.45px, transparent .5px); background-size: 5px 5px; mix-blend-mode: multiply; }
 .hero-copy { position: relative; z-index: 2; padding-top: 20px; }
 .eyebrow { font-family: Georgia, serif; font-size: 11px; letter-spacing: .22em; font-weight: 700; }
@@ -37,29 +39,20 @@ nav a:hover { opacity: .6; }
 .button:hover { transform: translateY(-2px); }
 .primary { background: var(--coral); color: #fff; box-shadow: 0 10px 24px rgba(173,77,58,.18); }
 .text-link { font-family: "Hiragino Kaku Gothic ProN", sans-serif; font-size: 13px; border-bottom: 1px solid var(--ink); padding-bottom: 4px; }
-.hero-art { position: relative; z-index: 2; height: 560px; display: grid; place-items: center; }
-.house { position: relative; width: clamp(260px, 27vw, 430px); height: 390px; filter: drop-shadow(0 25px 25px rgba(89,65,51,.15)); }
-.roof { position: absolute; z-index: 2; top: 36px; left: 12%; width: 76%; height: 150px; background: linear-gradient(145deg,#ec8a64,#d85d49); clip-path: polygon(50% 0,100% 82%,91% 100%,50% 28%,8% 100%,0 83%); }
-.house-body { position: absolute; bottom: 40px; left: 19%; width: 62%; height: 235px; border-radius: 4px 4px 24px 24px; background: linear-gradient(100deg,#f5b456,#f7d273 52%,#ebb35f); box-shadow: inset -20px 0 rgba(214,114,65,.12); }
-.door { position: absolute; bottom: 0; left: 39%; width: 27%; height: 125px; border-radius: 70px 70px 0 0; background: #596d58; }
-.window { position: absolute; left: 11%; top: 65px; width: 58px; height: 70px; border: 8px solid #f7e6b5; background: #91b6ae; box-shadow: 24px 0 0 -21px #f7e6b5, 0 28px 0 -25px #f7e6b5; }
-.garden { position: absolute; bottom: 70px; font-size: 100px; color: var(--green); font-family: serif; }
-.garden-left { left: 2%; transform: rotate(-18deg); }
-.garden-right { right: 5%; font-size: 180px; color: #7c9b64; transform: rotate(12deg); }
-.path { position: absolute; bottom: 5px; width: 180px; height: 75px; border-radius: 50%; background: repeating-linear-gradient(35deg,#df8062 0 18px,#f0ba67 18px 36px,#7b9c71 36px 54px); transform: perspective(120px) rotateX(58deg); opacity: .82; }
-.hero-art p { position: absolute; bottom: -20px; right: 5%; font-size: 13px; letter-spacing: .12em; transform: rotate(3deg); }
+.hero-art { position: relative; z-index: 2; height: 660px; display: grid; place-items: center; }
+.hero-art img { width: min(66vw, 840px); max-width: 112%; height: auto; filter: drop-shadow(0 28px 28px rgba(89,65,51,.12)); }
 .hero-orb { position: absolute; border-radius: 50%; opacity: .52; filter: blur(1px); }
 .orb-one { width: 260px; height: 260px; right: -100px; top: 16%; background: #f3af4b; }
 .orb-two { width: 130px; height: 130px; left: 45%; bottom: -40px; background: #77a690; }
 .scroll-cue { position: absolute; z-index: 3; bottom: 34px; left: clamp(24px,5vw,74px); font: 10px Arial,sans-serif; letter-spacing: .18em; display: flex; gap: 16px; align-items: center; }
 .scroll-cue span { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid rgba(55,50,47,.4); border-radius: 50%; }
 
-.section { padding: 120px clamp(24px, 8vw, 130px); }
+.section { padding: 120px clamp(24px, 8vw, 130px); scroll-margin-top: 24px; }
 .section-kicker { display: flex; align-items: center; gap: 18px; font: 700 10px Arial,sans-serif; letter-spacing: .22em; color: var(--coral); }
 .section-kicker i { width: 65px; height: 1px; background: currentColor; }
 .about { background: var(--cream); }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9vw; margin: 54px 0 80px; }
-.about h2, .places h2, .contact h2, .yorimichi h2 { margin: 0; font-size: clamp(32px, 4vw, 56px); line-height: 1.55; font-weight: 500; }
+.about h2, .places h2, .contact h2, .yorimichi h2, .join h2 { margin: 0; font-size: clamp(32px, 4vw, 56px); line-height: 1.55; font-weight: 500; }
 .about-copy { font-size: 16px; line-height: 2.2; }
 .about-copy p { margin: 0 0 22px; }
 .values { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -93,15 +86,19 @@ nav a:hover { opacity: .6; }
 .place-content dd { margin: 0; }
 .place-content > a { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--line); padding-top: 17px; font: 700 12px "Hiragino Kaku Gothic ProN",sans-serif; color: var(--coral); }
 
-.yorimichi { background: #f5dfdc; display: grid; grid-template-columns: .9fr 1.1fr; gap: 10vw; align-items: center; }
-.yorimichi-logo { min-height: 340px; display: grid; place-items: center; border-radius: 50% 48% 46% 52%; background: #fff7ef; position: relative; transform: rotate(-2deg); }
-.yorimichi-logo::before, .yorimichi-logo::after { content: "✿"; position: absolute; color: #719173; font-size: 44px; }
-.yorimichi-logo::before { left: 8%; bottom: 15%; }
-.yorimichi-logo::after { right: 10%; top: 10%; color: #e2a546; }
-.yorimichi-logo img { width: min(75%, 330px); height: auto; mix-blend-mode: multiply; }
+.yorimichi { background: #f5dfdc; display: grid; grid-template-columns: 1.05fr .95fr; gap: 7vw; align-items: center; }
+.yorimichi-logo { display: grid; place-items: center; position: relative; }
+.yorimichi-logo img { width: min(100%, 760px); height: auto; filter: drop-shadow(0 22px 24px rgba(89,65,51,.14)); }
 .yorimichi h2 { margin: 20px 0 25px; font-size: clamp(32px,3.7vw,50px); }
 .yorimichi > div:last-child > p:not(.eyebrow) { max-width: 560px; line-height: 2.1; }
 .outline { margin-top: 20px; border: 1px solid var(--ink); background: transparent; }
+
+.join { background: var(--cream); }
+.join-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 8vw; margin-top: 44px; align-items: start; }
+.join-lead { margin: 28px 0 0; font-size: 16px; line-height: 2.2; }
+.join-copy { padding: 38px 42px; border-left: 1px solid var(--line); background: rgba(255,250,245,.72); }
+.join-copy p { margin: 0 0 22px; line-height: 2.1; }
+.join-copy .button { margin-top: 8px; }
 
 .contact { background: #fffaf5; display: grid; grid-template-columns: .85fr 1.15fr; gap: 9vw; }
 .contact h2 { margin: 30px 0; }
@@ -129,46 +126,56 @@ footer { background: #334438; color: white; padding: 70px clamp(24px, 8vw, 130px
 .footer-nav { display: flex; gap: 38px; align-items: start; font: 12px "Hiragino Kaku Gothic ProN",sans-serif; }
 .footer-bottom { display: flex; justify-content: space-between; border-top: 1px solid rgba(255,255,255,.18); padding-top: 22px; font: 9px Arial,sans-serif; letter-spacing: .15em; opacity: .65; }
 
+.thanks-page { min-height: 100vh; display: grid; place-items: center; padding: 40px 24px; background: #f7e4e1; }
+.thanks-panel { width: min(760px, 100%); padding: clamp(34px, 6vw, 68px); background: #fffaf4; border: 1px solid var(--line); box-shadow: 16px 16px 0 rgba(221,109,82,.14); }
+.thanks-panel .brand { margin-bottom: 42px; }
+.thanks-panel h1 { margin: 18px 0 20px; font-size: clamp(31px, 4vw, 48px); line-height: 1.45; font-weight: 500; }
+.thanks-panel h2 { margin: 26px 0 12px; font-size: 24px; font-weight: 500; }
+.thanks-panel p { margin: 0; line-height: 2; }
+.thanks-panel hr { margin: 34px 0 0; border: 0; border-top: 1px solid var(--line); }
+.thanks-actions { display: flex; align-items: center; gap: 28px; margin-top: 36px; }
+
 @media (max-width: 900px) {
   .site-header { height: 76px; }
   nav a:not(.nav-contact) { display: none; }
   .nav-contact { padding: 10px 16px; }
   .hero { height: auto; max-height: none; min-height: 850px; grid-template-columns: 1fr; padding-top: 120px; }
   .hero-copy { align-self: end; }
-  .hero-art { height: 380px; align-self: start; }
-  .house { transform: scale(.76); }
-  .garden { transform: scale(.7); }
+  .hero-art { height: 500px; align-self: start; }
+  .hero-art img { width: min(104vw, 680px); max-width: 108%; }
   .scroll-cue { display: none; }
-  .about-grid, .yorimichi, .contact { grid-template-columns: 1fr; }
+  .about-grid, .yorimichi, .contact, .join-grid { grid-template-columns: 1fr; }
   .about-grid { gap: 30px; }
+  .join-copy { border-left: 0; padding: 30px 0 0; background: transparent; }
   .place-grid { grid-template-columns: repeat(2,1fr); }
   .section-heading { align-items: start; flex-direction: column; }
 }
 
 @media (max-width: 620px) {
   .brand { font-size: 13px; }
+  .brand-text small { font-size: 9px; letter-spacing: .06em; }
   .brand-mark { width: 32px; height: 32px; }
   .hero { min-height: 780px; padding-left: 24px; padding-right: 24px; }
   .hero h1 { font-size: 37px; }
   .hero-lead br { display: none; }
   .hero-actions { gap: 22px; }
-  .hero-art { height: 315px; }
-  .house { transform: scale(.63); }
-  .hero-art p { bottom: 0; }
+  .hero-art { height: 390px; }
+  .hero-art img { width: min(112vw, 520px); max-width: 112%; }
   .section { padding: 80px 24px; }
-  .about h2, .places h2, .contact h2, .yorimichi h2 { font-size: 31px; }
+  .about h2, .places h2, .contact h2, .yorimichi h2, .join h2 { font-size: 31px; }
   .values { grid-template-columns: 1fr; }
   .values article { border-right: 0; border-bottom: 1px solid var(--line); }
   .values article:last-child { border-bottom: 0; }
   .place-grid { grid-template-columns: 1fr; }
   .place-content > p { min-height: auto; }
-  .yorimichi-logo { min-height: 260px; }
+  .yorimichi-logo img { width: min(108vw, 520px); }
   .contact-form { padding: 28px 20px; box-shadow: 8px 8px 0 #f4ded7; }
   .field-row { grid-template-columns: 1fr; }
   .submit { min-width: 100%; }
   .footer-main { flex-direction: column; }
   .footer-nav { flex-direction: column; gap: 18px; }
   .footer-bottom { flex-direction: column; gap: 12px; }
+  .thanks-actions { flex-direction: column; align-items: stretch; }
 }
 
 @media (prefers-reduced-motion: reduce) {
