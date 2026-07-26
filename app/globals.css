@@ -238,6 +238,7 @@ footer { background: #334438; color: white; padding: 70px clamp(24px, 8vw, 130px
 .download-panel { display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center; padding: 34px; border: 1px solid var(--line); background: #fffaf5; }
 .download-panel h2 { margin-bottom: 10px; }
 .download-panel p { margin: 0; }
+.article-body .download-panel .button { color: #fff; border-bottom: 0; }
 
 @media (max-width: 900px) {
   .site-header { height: 76px; }
