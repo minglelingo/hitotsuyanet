@@ -10,6 +10,15 @@ await cp(new URL("../public/reports/", import.meta.url), new URL("../dist/client
   recursive: true,
 });
 
+const mobileMenuScript = `<script>
+document.addEventListener("click", function (event) {
+  var link = event.target.closest && event.target.closest(".mobile-menu a");
+  if (!link) return;
+  var menu = link.closest(".mobile-menu");
+  if (menu) menu.removeAttribute("open");
+});
+</script>`;
+
 const renderPage = async (path, outputPath) => {
   const response = await worker.fetch(
     new Request(`https://hitotsuyanet.pages.dev${path}`, {
@@ -33,7 +42,8 @@ const renderPage = async (path, outputPath) => {
   const html = (await response.text())
     .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
     .replace(/<script\b[^>]*><\/script>/gi, "")
-    .replace(/<link rel="modulepreload"[^>]*>/gi, "");
+    .replace(/<link rel="modulepreload"[^>]*>/gi, "")
+    .replace("</body>", `${mobileMenuScript}</body>`);
 
   await mkdir(new URL(`../dist/client/${outputPath.replace(/\/?index\.html$/, "")}`, import.meta.url), {
     recursive: true,

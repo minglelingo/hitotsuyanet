@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const mobileMenuScript = `
+document.addEventListener("click", function (event) {
+  var link = event.target.closest && event.target.closest(".mobile-menu a");
+  if (!link) return;
+  var menu = link.closest(".mobile-menu");
+  if (menu) menu.removeAttribute("open");
+});
+`;
+
 export const metadata: Metadata = {
   title: "ひとつやねっと｜調布・狛江の地域の居場所",
   description: "調布・狛江の周辺エリアで「地域の居場所」づくりに取り組む市民ネットワーク、ひとつやねっとの公式サイトです。",
@@ -25,7 +34,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ja">
-      <body>{children}</body>
+      <body>
+        {children}
+        <script dangerouslySetInnerHTML={{ __html: mobileMenuScript }} />
+      </body>
     </html>
   );
 }
