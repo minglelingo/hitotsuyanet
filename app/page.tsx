@@ -82,6 +82,7 @@ export default function Home() {
           <a href="#about">私たちについて</a>
           <a href="#places">居場所を探す</a>
           <a href="#join">連絡会に参加する</a>
+          <a href="/reports/">活動報告</a>
           <a className="nav-contact" href="#contact">お問い合わせ</a>
         </nav>
       </header>
@@ -166,21 +167,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="yorimichi section">
-        <div className="yorimichi-logo">
-          <img src="/yorimichi-printed.png" alt="冊子「よりみち」の見開き" loading="lazy" decoding="async" />
-        </div>
-        <div>
-          <p className="eyebrow">LOCAL COMMUNITY GUIDE</p>
-          <h2>居場所の物語を、一冊に。</h2>
-          <p>
-            つくったひと、訪れるひと、やってみたいことを持ち込んだひと。
-            それぞれの想いがつくる6つの居場所を、冊子「よりみち」で紹介しています。
-          </p>
-          <a className="button outline" href="#places">掲載スポットを見る <span>→</span></a>
-        </div>
-      </section>
-
       <section className="join section" id="join">
         <div className="section-kicker"><span>JOIN THE NETWORK</span><i /></div>
         <div className="join-grid">
@@ -256,7 +242,7 @@ export default function Home() {
             <p>調布・狛江の周辺エリアで「地域の居場所」づくりに取り組む市民のネットワークです。</p>
           </div>
           <div className="footer-nav">
-            <a href="#about">私たちについて</a><a href="#places">居場所を探す</a><a href="#join">連絡会に参加する</a><a href="#contact">お問い合わせ</a>
+            <a href="#about">私たちについて</a><a href="#places">居場所を探す</a><a href="#join">連絡会に参加する</a><a href="/reports/">活動報告</a><a href="#contact">お問い合わせ</a>
           </div>
         </div>
         <div className="footer-bottom">

@@ -25,8 +25,7 @@ export default defineConfig(async () => {
         config: {
           name: "hitotsuyanet",
           account_id: "edbb1242e3228892853e312d97122bd3",
-          compatibility_date: "2026-07-26",
-          compatibility_flags: ["nodejs_compat"],
+          compatibility_date: "2026-05-22",
         },
       }),
     ],

@@ -136,6 +136,51 @@ footer { background: #334438; color: white; padding: 70px clamp(24px, 8vw, 130px
 .thanks-panel hr { margin: 34px 0 0; border: 0; border-top: 1px solid var(--line); }
 .thanks-actions { display: flex; align-items: center; gap: 28px; margin-top: 36px; }
 
+.sub-page { min-height: 100vh; background: var(--cream); }
+.sub-header { position: sticky; top: 0; background: rgba(255,249,242,.94); backdrop-filter: blur(12px); }
+.reports-hero { padding-top: 180px; padding-bottom: 72px; background: #f7e4e1; }
+.reports-hero h1 { margin: 24px 0 22px; font-size: clamp(44px, 6vw, 84px); line-height: 1.25; font-weight: 500; }
+.reports-hero p { max-width: 620px; margin: 0; font-size: 16px; line-height: 2; }
+.reports-list { padding-top: 76px; }
+.report-card { border-top: 1px solid var(--line); }
+.report-card:last-child { border-bottom: 1px solid var(--line); }
+.report-card a { display: grid; grid-template-columns: minmax(260px, 420px) 1fr; gap: clamp(32px, 6vw, 92px); padding: 42px 0; align-items: center; }
+.report-card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; border-radius: 4px; box-shadow: 12px 12px 0 #f4ded7; }
+.report-card time, .article-hero time { display: block; margin-bottom: 14px; font: 700 11px Arial,sans-serif; letter-spacing: .18em; color: var(--coral); }
+.report-card h2 { margin: 0 0 18px; font-size: clamp(26px, 3vw, 42px); line-height: 1.5; font-weight: 500; }
+.report-card p { max-width: 680px; margin: 0 0 24px; line-height: 2; }
+.report-card span { font: 700 12px "Hiragino Kaku Gothic ProN",sans-serif; color: var(--coral); }
+
+.article-page { padding-top: 92px; }
+.article-hero { padding: 86px clamp(24px, 8vw, 130px) 70px; background: #f7e4e1; }
+.article-hero .section-kicker { margin: 0 0 34px; }
+.article-hero h1 { max-width: 980px; margin: 0 0 28px; font-size: clamp(38px, 5.2vw, 76px); line-height: 1.35; font-weight: 500; }
+.article-hero > p { max-width: 760px; margin: 0; font-size: 16px; line-height: 2; }
+.article-meta { display: inline-grid; margin: 28px 0 0; padding: 16px 20px; border: 1px solid rgba(55,50,47,.18); background: rgba(255,250,245,.64); font-family: "Hiragino Kaku Gothic ProN", sans-serif; }
+.article-meta div { display: flex; gap: 18px; align-items: baseline; }
+.article-meta dt { font-size: 11px; font-weight: 700; letter-spacing: .12em; color: var(--coral); }
+.article-meta dd { margin: 0; font-size: 14px; font-weight: 700; }
+.article-main-image { margin: 0; padding: 0 clamp(24px, 8vw, 130px); transform: translateY(-28px); }
+.article-main-image img { width: 100%; border-radius: 4px; box-shadow: 18px 18px 0 rgba(221,109,82,.14); }
+.article-body { max-width: 940px; margin: 0 auto; padding: 42px 24px 120px; }
+.article-body section { margin: 0 0 58px; }
+.article-body h2 { margin: 0 0 20px; font-size: clamp(26px, 3vw, 38px); line-height: 1.5; font-weight: 500; }
+.article-body p { margin: 0 0 20px; line-height: 2.15; }
+.article-body blockquote { margin: 0; padding: 30px 34px; border-left: 4px solid var(--coral); background: #fffaf5; }
+.article-body blockquote p:last-child { margin-bottom: 0; }
+.article-body a { color: var(--coral); border-bottom: 1px solid rgba(221,109,82,.38); }
+.article-details { display: grid; margin: 0; border-top: 1px solid var(--line); }
+.article-details div { display: grid; grid-template-columns: 180px 1fr; gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.article-details dt { font: 700 12px "Hiragino Kaku Gothic ProN",sans-serif; color: #9b8274; }
+.article-details dd { margin: 0; line-height: 1.9; }
+.article-links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 28px !important; font-family: "Hiragino Kaku Gothic ProN", sans-serif; font-size: 13px; font-weight: 700; }
+.article-spread { margin: 72px calc(50% - 50vw); padding: 0 clamp(24px, 8vw, 130px); }
+.article-spread img { width: 100%; border-radius: 4px; box-shadow: 18px 18px 0 rgba(88,114,88,.14); }
+.article-spread figcaption { margin-top: 18px; text-align: center; font: 12px/1.8 "Hiragino Kaku Gothic ProN",sans-serif; color: #786d66; }
+.download-panel { display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center; padding: 34px; border: 1px solid var(--line); background: #fffaf5; }
+.download-panel h2 { margin-bottom: 10px; }
+.download-panel p { margin: 0; }
+
 @media (max-width: 900px) {
   .site-header { height: 76px; }
   nav a:not(.nav-contact) { display: none; }
@@ -151,6 +196,9 @@ footer { background: #334438; color: white; padding: 70px clamp(24px, 8vw, 130px
   .join-copy { border-left: 0; padding: 30px 0 0; background: transparent; }
   .place-grid { grid-template-columns: repeat(2,1fr); }
   .section-heading { align-items: start; flex-direction: column; }
+  .report-card a, .download-panel { grid-template-columns: 1fr; }
+  .article-details div { grid-template-columns: 1fr; gap: 8px; }
+  .article-page { padding-top: 76px; }
 }
 
 @media (max-width: 620px) {
@@ -178,6 +226,11 @@ footer { background: #334438; color: white; padding: 70px clamp(24px, 8vw, 130px
   .footer-nav { flex-direction: column; gap: 18px; }
   .footer-bottom { flex-direction: column; gap: 12px; }
   .thanks-actions { flex-direction: column; align-items: stretch; }
+  .reports-hero { padding-top: 130px; }
+  .report-card a { padding: 34px 0; }
+  .article-hero { padding-top: 58px; }
+  .article-body { padding-bottom: 80px; }
+  .article-body blockquote, .download-panel { padding: 24px 20px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
