@@ -13,13 +13,23 @@ export default function ReportsPage() {
             <small>調布・狛江居場所連絡会</small>
           </span>
         </a>
-        <nav aria-label="メインナビゲーション">
+        <nav className="desktop-nav" aria-label="メインナビゲーション">
           <a href="/#about">私たちについて</a>
           <a href="/#places">居場所を探す</a>
           <a href="/#join">連絡会に参加する</a>
           <a href="/reports/">活動報告</a>
           <a className="nav-contact" href="/#contact">お問い合わせ</a>
         </nav>
+        <details className="mobile-menu">
+          <summary aria-label="メニューを開く"><span /><span /><span /></summary>
+          <nav aria-label="モバイルナビゲーション">
+            <a href="/#about">私たちについて</a>
+            <a href="/#places">居場所を探す</a>
+            <a href="/#join">連絡会に参加する</a>
+            <a href="/reports/">活動報告</a>
+            <a href="/#contact">お問い合わせ</a>
+          </nav>
+        </details>
       </header>
 
       <section className="reports-hero section">
