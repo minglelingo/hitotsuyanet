@@ -1,4 +1,4 @@
-import { mkdir, rm, writeFile } from "node:fs/promises";
+import { cp, mkdir, rm, writeFile } from "node:fs/promises";
 
 const workerUrl = new URL("../dist/server/index.js", import.meta.url);
 workerUrl.searchParams.set("static", `${process.pid}-${Date.now()}`);
@@ -6,6 +6,9 @@ const { default: worker } = await import(workerUrl.href);
 
 await mkdir(new URL("../dist/client/", import.meta.url), { recursive: true });
 await rm(new URL("../dist/client/reports/", import.meta.url), { recursive: true, force: true });
+await cp(new URL("../public/reports/", import.meta.url), new URL("../dist/client/reports/", import.meta.url), {
+  recursive: true,
+});
 
 const renderPage = async (path, outputPath) => {
   const response = await worker.fetch(

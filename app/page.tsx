@@ -115,6 +115,34 @@ export default function Home() {
         <a href="#about" className="scroll-cue" aria-label="次のセクションへ">SCROLL <span>↓</span></a>
       </section>
 
+      <section className="news section" aria-labelledby="news-heading">
+        <div className="section-kicker"><span>NEWS</span><i /></div>
+        <div className="news-grid">
+          <div>
+            <h2 id="news-heading">お知らせ</h2>
+            <p>ひとつやねっとの活動や、まちの居場所に関する最新情報をお届けします。</p>
+          </div>
+          <div className="news-list">
+            <article className="news-item">
+              <img src="/yorimichi-printed.png" alt="" loading="lazy" decoding="async" />
+              <div>
+                <time>2026-08-01</time>
+                <h3>居場所ガイド『よりみち』を発行しました。</h3>
+                <p>調布・狛江エリアの6つの居場所を紹介する冊子を制作しました。</p>
+              </div>
+            </article>
+            <article className="news-item">
+              <img src="/reports/ibasho-stamp-rally/ibasho-stamp-rally-soto.png" alt="" loading="lazy" decoding="async" />
+              <div>
+                <time>2026-03-31</time>
+                <h3><a href="/reports/ibasho-stamp-rally/">居場所スタンプラリーを実施しました</a></h3>
+                <p>調布市・狛江市の6つの居場所をめぐる企画を実施しました。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section className="about section" id="about">
         <div className="section-kicker"><span>ABOUT US</span><i /></div>
         <div className="about-grid">
