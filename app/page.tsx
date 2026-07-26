@@ -92,9 +92,7 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow">A LOCAL COMMUNITY NETWORK</p>
           <h1>
-            ひとつの屋根から、
-            <br />
-            まちに<span>つながり</span>を。
+            ひとつの屋根から、まちに<span>つながり</span>を。
           </h1>
           <p className="hero-lead">
             家でも学校や職場でもない、
