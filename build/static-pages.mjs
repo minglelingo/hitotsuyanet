@@ -55,6 +55,7 @@ const renderPage = async (path, outputPath) => {
 const html = await renderPage("/", "index.html");
 await renderPage("/reports", "reports/index.html");
 await renderPage("/reports/ibasho-stamp-rally", "reports/ibasho-stamp-rally/index.html");
+await renderPage("/reports/yorimichi-guide", "reports/yorimichi-guide/index.html");
 
 const cssHref = html.match(/href="([^"]+\.css)"/)?.[1] ?? "";
 
