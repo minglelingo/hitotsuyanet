@@ -1,7 +1,7 @@
 export const reports = [
   {
     slug: "yorimichi-guide",
-    date: "2026.08.01",
+    date: "2026.06.20",
     title: "居場所ガイド『よりみち』を発行しました",
     excerpt:
       "調布・狛江エリアでひらかれている6つの居場所と、そこに関わる人たちの想いを紹介する冊子を制作しました。",

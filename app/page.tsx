@@ -136,7 +136,7 @@ export default function Home() {
             <article className="news-item">
               <img src="/yorimichi-printed.png" alt="" loading="lazy" decoding="async" />
               <div>
-                <time>2026-08-01</time>
+                <time>2026-06-20</time>
                 <h3><a href="/reports/yorimichi-guide/">居場所ガイド『よりみち』を発行しました。</a></h3>
                 <p>調布・狛江エリアの6つの居場所を紹介する冊子を制作しました。</p>
               </div>

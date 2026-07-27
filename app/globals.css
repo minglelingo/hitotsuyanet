@@ -239,6 +239,13 @@ footer { background: #334438; color: white; padding: 70px clamp(24px, 8vw, 130px
 .download-panel h2 { margin-bottom: 10px; }
 .download-panel p { margin: 0; }
 .article-body .download-panel .button { color: #fff; border-bottom: 0; }
+.guide-place-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 34px; }
+.guide-place { overflow: hidden; border: 1px solid var(--line); border-radius: 4px; background: #fffaf5; }
+.guide-place img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+.guide-place div { padding: 22px 24px 24px; }
+.guide-place small { font: 700 11px "Hiragino Kaku Gothic ProN",sans-serif; letter-spacing: .12em; color: var(--coral); }
+.guide-place h3 { margin: 8px 0 10px; font-size: 21px; font-weight: 500; }
+.guide-place p { margin: 0; font-size: 13px; line-height: 1.9; }
 
 @media (max-width: 900px) {
   .site-header { height: 76px; }
@@ -257,6 +264,7 @@ footer { background: #334438; color: white; padding: 70px clamp(24px, 8vw, 130px
   .section-heading { align-items: start; flex-direction: column; }
   .report-card a, .download-panel { grid-template-columns: 1fr; }
   .article-details div { grid-template-columns: 1fr; gap: 8px; }
+  .guide-place-grid { grid-template-columns: 1fr; }
   .article-page { padding-top: 76px; }
 }
 
