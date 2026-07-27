@@ -137,7 +137,7 @@ export default function YorimichiGuideReportPage() {
             </p>
           </section>
 
-          <section>
+          <section id="guide-places">
             <h2>ひとつ屋根の下にある、6つの物語</h2>
             <p>
               今回掲載したのは、調布・狛江の周辺で活動する6つの居場所です。
@@ -272,6 +272,18 @@ export default function YorimichiGuideReportPage() {
                 <dd>2026年6月20日</dd>
               </div>
             </dl>
+          </section>
+
+          <section>
+            <h2>冊子を配布している場所</h2>
+            <p>冊子は以下の場所でもらえます。</p>
+            <ul className="distribution-list">
+              <li>
+                掲載されている
+                <a href="#guide-places">6つの場所</a>
+              </li>
+              <li>ほかは設置され次第、随時更新します。</li>
+            </ul>
           </section>
 
           <section className="download-panel">
