@@ -265,7 +265,12 @@ export default function YorimichiGuideReportPage() {
               </div>
               <div>
                 <dt>協賛</dt>
-                <dd>アフラック生命保険株式会社、NPO法人あんしんシニアサポート、株式会社Salud、株式会社ピークス</dd>
+                <dd>
+                  <a href="https://www.aflac.co.jp/" target="_blank" rel="noreferrer">アフラック生命保険株式会社</a>、
+                  <a href="https://www.npochofu.net/" target="_blank" rel="noreferrer">NPO法人あんしんシニアサポート</a>、
+                  <a href="https://www.salud-ltd.com/" target="_blank" rel="noreferrer">株式会社Salud</a>、
+                  <a href="https://peaks-inc.jp/" target="_blank" rel="noreferrer">株式会社ピークス</a>
+                </dd>
               </div>
               <div>
                 <dt>発行日</dt>
